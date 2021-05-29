@@ -1,7 +1,8 @@
 import socket
 
-target_host = "www.google.com"
-target_port = 80
+target_host = input("Enter the target host: ")
+target_port = int(input("Enter the target port: "))
+
 
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 # creating a socket object / AF_INET for IPv4 address or hostname / SOCK_STREAM for TCP client
@@ -17,4 +18,4 @@ response = client.recv(4096)
 
 client.close()
 
-print (response)
+print ("[*] Received: %s" % response)
